@@ -1,6 +1,6 @@
-public class Sqr {
+public class HW3Exponentation {
     public static void main(String[] args) {
-        int x = 3;
+        int x = 2;
         int n = 3;
         for (int i = 1; i < n; i++) {
             x *= x;

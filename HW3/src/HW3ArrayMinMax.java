@@ -24,7 +24,7 @@ public class HW3ArrayMinMax {
 
             }
 
-            }
+        }
         for (int d = 0; d < Array.length; d++) {
             System.out.print(Array[d] + ", ");
         }
