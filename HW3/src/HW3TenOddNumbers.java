@@ -1,4 +1,4 @@
-public class HW3OddArray {
+public class HW3TenOddNumbers {
     public static void main(String[] args) {
         int[] array = new int[10];
         int x = 0;

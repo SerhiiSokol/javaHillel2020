@@ -1,4 +1,4 @@
-public class OddNumDoWhile {
+public class HW3OddNumDoWhile {
     public static void main(String[] args) {
         int n = 1;
         do {

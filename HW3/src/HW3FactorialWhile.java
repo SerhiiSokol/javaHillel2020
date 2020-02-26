@@ -1,9 +1,11 @@
-public class Factorial {
+public class HW3FactorialWhile {
     public static void main(String[] args) {
         int n = 5;
-        int res = 1;
-        for (int i = 1; i <= n; i++) {
+        int i = 1;
+        int res = i;
+        while (i <= n) {
             res = res * i;
+            i++;
         }
         System.out.println(res);
     }

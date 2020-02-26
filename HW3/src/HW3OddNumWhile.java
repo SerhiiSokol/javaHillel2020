@@ -1,4 +1,4 @@
-public class OddNumWhile {
+public class HW3OddNumWhile {
     public static void main(String[] args) {
         int n = 1;
         while (n < 100) {
