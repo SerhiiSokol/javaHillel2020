@@ -20,7 +20,8 @@ public class Car {
         return this.tankBalance;
     }
 
-    void determineRefueled() {                                           //определить сколько надо дозаправить топлива при преодолении N км
-      refueling = this.tankBalance-(this.fuelConsumption/100)*this.fuelCost;
+    void determineRefueled(double distance) {                                           //определить сколько надо дозаправить топлива при преодолении N км
+        refueling = (this.fuelConsumption/100)*distance;
+        System.out.println();
     }
 }
