@@ -12,6 +12,6 @@ public class Animal {
     }
 
     public void voice() {
-        System.out.println("Hello," );
+        System.out.print("Hello, " );
     }
 }
