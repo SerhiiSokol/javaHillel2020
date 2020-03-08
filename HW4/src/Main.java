@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args) {
 
-        Car VAZ = new Car(45,20,9,26);
+        Car VAZ = new Car(45, 20, 9, 26);
 
         double OdessaKrivoeOzero = 178.8;
         double KrivoeOzeroZhashkov = 152.4;
-        double ZhashkovKiev = 151.6;
+        double ZhashkovKiev = 151.2;
 
         System.out.println("Старт поездки, выезжаем с полным баком с Одессы. ");
         System.out.println("Первая остановка Кривое Озеро.");
@@ -21,6 +21,7 @@ public class Main {
         VAZ.determineRefueled(ZhashkovKiev);
         VAZ.fillAFullTank();
         System.out.println();
-        System.out.println("Полная стоимость поездки составила " + Math.round(VAZ.costOfTravel) +" грн.");
+        System.out.println("Топлива затрачено " + Math.rint(VAZ.fuelOfTravel * 10) / 10 + " л.");
+        System.out.println("Полная стоимость поездки составила " + Math.rint((VAZ.fuelOfTravel * VAZ.fuelCost) * 100) / 100 + " грн.");
     }
 }
