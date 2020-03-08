@@ -21,7 +21,7 @@ public class Main {
         VAZ.determineRefueled(ZhashkovKiev);
         VAZ.fillAFullTank();
         System.out.println();
-        System.out.println("Топлива затрачено " + Math.rint(VAZ.fuelOfTravel * 10) / 10 + " л.");
-        System.out.println("Полная стоимость поездки составила " + Math.rint((VAZ.fuelOfTravel * VAZ.fuelCost) * 100) / 100 + " грн.");
+        System.out.println("Топлива затрачено " + Math.rint(VAZ.getFuelOfTravel() * 10) / 10 + " л.");
+        System.out.println("Полная стоимость поездки составила " + Math.rint((VAZ.getFuelOfTravel() * VAZ.getFuelCost()) * 100) / 100 + " грн.");
     }
 }
