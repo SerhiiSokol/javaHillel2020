@@ -16,9 +16,9 @@ public class Pet extends Animal {
     public void voice() {
         super.voice ();
         if (name != null)
-            System.out.println ("my name is " + name + ", " + "my voice is - " + MyVoice);
+            System.out.println ("my name is " + name + ", " + "my voice is - " + getMyVoice ());
         else
-            System.out.println ("and I don`t have name, " + "my voice is - " + MyVoice);
-        System.out.println ("I am a pet - " + kind);
+            System.out.println ("and I don`t have name, " + "my voice is - " + getMyVoice ());
+        System.out.println ("I am a pet - " + getKind ());
     }
 }
