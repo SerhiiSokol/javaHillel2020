@@ -9,11 +9,11 @@ public class AnimalMain {
         g.voice ();
         System.out.println (g.toString ());
         System.out.println ("------------------------------------------------------------------");
-        Lion l = new Lion (3, 10, 160, "Brown", "Lion", "Grrrrr..", true);
+        Lion l = new Lion (3, 10, 160, "Brown", "Lion", "'Grrrrr..'", true);
         l.voice ();
         System.out.println (l.toString ());
         System.out.println ("------------------------------------------------------------------");
-        Cat c = new Cat (4, 4, 12, "Black", "Cat", "Meow", "Zefir", true);
+        Cat c = new Cat (4, 4, 12, "Black", "Cat", "'Meow'", "Zefir", true);
         c.voice ();
         System.out.println (c.toString ());
         System.out.println ("------------------------------------------------------------------");
@@ -21,9 +21,9 @@ public class AnimalMain {
         d.voice ();
         System.out.println (d.toString ());
         System.out.println ("------------------------------------------------------------------");
-        Fish f = new Fish (6, 2, 0.1, "red", "Fisch", "'...'", false);
+        Fish f = new Fish (6, 2, 0.1, "gold", "Fisch", "'...'", false);
         f.voice ();
-        System.out.println (l.toString ());
+        System.out.println (f.toString ());
         System.out.println ("------------------------------------------------------------------");
         GuideDog gd = new GuideDog (7, 10, 28, "Brown", "Dog", "'Woof'", "Jack", true, true);
         gd.voice ();

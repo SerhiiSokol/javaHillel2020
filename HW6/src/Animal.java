@@ -69,6 +69,6 @@ public class Animal implements Voice {
 
     @Override
     public String toString() {
-        return "Id = " + id + "; Age = " + age + "; Weight = " + weight + "; Color = " + color;
+        return "Id = " + id + "; Age = " + age + " years ; Weight = " + weight + " kg. ; Color = " + color;
     }
 }
