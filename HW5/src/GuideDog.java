@@ -11,8 +11,7 @@ public class GuideDog extends Dog {
     public void voice() {
         super.voice ();
         if (isTrained)
-            System.out.print (" I'm trained.");
-        System.out.println (" Woof");
+            System.out.print ("I'm trained. ");
         if (isTrained)
             System.out.println ("I can take you home.");
         else

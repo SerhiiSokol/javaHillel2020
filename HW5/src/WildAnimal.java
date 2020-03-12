@@ -1,4 +1,4 @@
-public class WildAnimal extends Animal {
+public class WildAnimal extends Animal{
     private boolean isPredator;
 
     public WildAnimal(int id, int age, double weight, String color, String kind, String myVoice, boolean isPredator) {
