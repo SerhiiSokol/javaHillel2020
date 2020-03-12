@@ -9,7 +9,7 @@ public class WildAnimal extends Animal{
     @Override
     public void voice() {
         super.voice ();
-        System.out.print ("I am a wild animal - " + kind + ". " + "My voice is - " + MyVoice);
+        System.out.print ("I am a wild animal - " + getKind () + ". " + "My voice is - " + getMyVoice ());
         if (isPredator)
             System.out.println ("! And I am angry!");
         else
