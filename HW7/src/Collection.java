@@ -82,4 +82,17 @@ public class Collection {
         return indexOf;
     }
 
+    public boolean equals(String[] array2) {
+        boolean flag = true;
+        if (size != array2.length) {
+            flag = false;
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (myArray[i] != array2[i]) {
+                    flag = false;
+                }
+            }
+        }
+        return flag;
+    }
 }

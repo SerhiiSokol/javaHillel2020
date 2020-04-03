@@ -9,11 +9,14 @@ public class Mein {
         friends.add ("Денис");
         friends.add ("Даша");
         friends.add ("Костя");
+
         friends.delete (friends.find ("Вася"));
         for (int i = 0; i < friends.getSize (); i++) {
             System.out.println (friends.get (i));
         }
         System.out.println ();
+        String[] SomeArray = new String[] {"Вася", "Саша"};
+        System.out.println (friends.equals (SomeArray));
         System.out.println (friends.find ("Даша"));
 
     }
