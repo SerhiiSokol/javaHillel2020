@@ -1,5 +1,10 @@
 public class Collection {
     private String[] myArray = new String[10];
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     private int size = 0;
 
 
@@ -16,8 +21,8 @@ public class Collection {
     }
 
     public void delete(int index) {
-        if (index >= 0 && index < size) {
-            for (int i = index; i < size - 1; i++) {
+        if (index >= 0 && index < getSize ()) {
+            for (int i = index; i < getSize () - 1; i++) {
                 myArray[i] = myArray[i + 1];
             }
             size--;
@@ -26,7 +31,7 @@ public class Collection {
 
     public void delete(String s) {
         int index = -1;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < getSize (); i++) {
             if (s.equals (myArray[i])) {
                 index = i;
                 break;
@@ -44,7 +49,7 @@ public class Collection {
 
     public String get(int index) {
 
-        if (index >= 0 && index < size) {
+        if (index >= 0 && index < getSize ()) {
             return myArray[index];
         } else {
             return "Элемент не найден";
@@ -58,14 +63,14 @@ public class Collection {
 
     public String contains(String s) {
         int cont = -1;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < getSize (); i++) {
             if (s.equals (myArray[i])) {
                 cont = i;
                 break;
             }
         }
         if (cont >= 0) {
-            return "Индекс искомого элемента " + cont;
+            return "Элемент есть в массиве под интексом " + cont;
         } else {
             return "Такого элемента нет";
         }
@@ -73,7 +78,7 @@ public class Collection {
 
     public int find(String s) {
         int indexOf = -1;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < getSize (); i++) {
             if (s.equals (myArray[i])) {
                 indexOf = i;
                 break;

@@ -11,13 +11,20 @@ public class Mein {
         friends.add ("Костя");
 
         friends.delete (friends.find ("Вася"));
+        System.out.println ("Все элементы массива: ");
         for (int i = 0; i < friends.getSize (); i++) {
             System.out.println (friends.get (i));
         }
         System.out.println ();
+        System.out.println (friends.contains ("Юр"));
         String[] SomeArray = new String[] {"Вася", "Саша"};
-        System.out.println (friends.equals (SomeArray));
-        System.out.println (friends.find ("Даша"));
+        System.out.println ("Массивы эквиваленты? - "+friends.equals (SomeArray));
+        System.out.println ("Индекс искомого элемента массива "+friends.find ("Даша"));
+        System.out.println ("Длина массива "+friends.getSize ());
+        System.out.println ();
+        System.out.println ("Очистим наш массив");
+        friends.clear ();
+        System.out.println ("Длина массива "+friends.getSize ());
 
     }
 }
