@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 public class Collection{
     private String[] myArray = new String[10];
 
@@ -87,7 +85,7 @@ public class Collection{
         return indexOf;
     }
 
-    public boolean equals(@NotNull String[] array2) {
+    public boolean equals(String[] array2) {
         boolean flag = true;
         if (size != array2.length) {
             flag = false;
