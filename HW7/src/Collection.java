@@ -1,13 +1,16 @@
-public class Collection {
+import org.jetbrains.annotations.NotNull;
+
+public class Collection implements InterfacesOfCollection {
     private String[] myArray = new String[10];
 
+    @Override
     public void setSize(int size) {
         this.size = size;
     }
 
     private int size = 0;
 
-
+    @Override
     public void add(String s) {
         myArray[size] = s;
         size++;
@@ -20,6 +23,7 @@ public class Collection {
         }
     }
 
+    @Override
     public void delete(int index) {
         if (index >= 0 && index < getSize ()) {
             for (int i = index; i < getSize () - 1; i++) {
@@ -29,6 +33,7 @@ public class Collection {
         }
     }
 
+    @Override
     public void delete(String s) {
         int index = -1;
         for (int i = 0; i < getSize (); i++) {
@@ -43,6 +48,7 @@ public class Collection {
 
     }
 
+    @Override
     public int getSize() {
         return size;
     }
@@ -76,6 +82,7 @@ public class Collection {
         }
     }
 
+    @Override
     public int find(String s) {
         int indexOf = -1;
         for (int i = 0; i < getSize (); i++) {
@@ -87,7 +94,8 @@ public class Collection {
         return indexOf;
     }
 
-    public boolean equals(String[] array2) {
+    @Override
+    public boolean equals(@NotNull String[] array2) {
         boolean flag = true;
         if (size != array2.length) {
             flag = false;
