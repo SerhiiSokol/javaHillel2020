@@ -16,7 +16,7 @@ public class Mein {
             System.out.println (friends.get (i));
         }
         System.out.println ();
-        System.out.println (friends.contains ("Юр"));
+        System.out.println (friends.contains("Юр"));
         String[] SomeArray = new String[] {"Вася", "Саша"};
         System.out.println ("Массивы эквиваленты? - "+friends.equals (SomeArray));
         System.out.println ("Индекс искомого элемента массива "+friends.find ("Даша"));
