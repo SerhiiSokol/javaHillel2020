@@ -56,22 +56,22 @@ public class Collection {
         size = 0;
     }
 
-    public String indexOf(String s) {       //в String
-        int indexOf = -1;
+    public String contains(String s) {
+        int cont = -1;
         for (int i = 0; i < size; i++) {
             if (s.equals (myArray[i])) {
-                indexOf = i;
+                cont = i;
                 break;
             }
         }
-        if (indexOf >= 0) {
-            return "Индекс искомого элемента " + indexOf;
+        if (cont >= 0) {
+            return "Индекс искомого элемента " + cont;
         } else {
             return "Такого элемента нет";
         }
     }
 
-    public int find(String s) {             //в int
+    public int find(String s) {
         int indexOf = -1;
         for (int i = 0; i < size; i++) {
             if (s.equals (myArray[i])) {
@@ -81,4 +81,5 @@ public class Collection {
         }
         return indexOf;
     }
+
 }

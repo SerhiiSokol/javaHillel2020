@@ -9,6 +9,7 @@ public class Mein {
         friends.add ("Денис");
         friends.add ("Даша");
         friends.add ("Костя");
+        friends.delete (friends.find ("Вася"));
         for (int i = 0; i < friends.getSize (); i++) {
             System.out.println (friends.get (i));
         }
