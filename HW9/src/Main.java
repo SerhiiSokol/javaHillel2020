@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList ();
+        ThreadOfList list = new ThreadOfList ();
 
         list.add ("Женя");
         list.add ("Коля");
@@ -22,7 +22,7 @@ public class Main {
         System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
         System.out.println ("______________________________________________________");
 
-        List strCll = new ArrayList ();
+        ArrayList strCll = new ArrayList ();
         strCll.add ("Вася");
         strCll.add ("Петя");
         strCll.add ("Юра");

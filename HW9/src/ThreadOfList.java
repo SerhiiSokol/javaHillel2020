@@ -1,7 +1,7 @@
 import java.util.Collection;
 import java.util.Iterator;
 
-public class LinkedList implements CustomCollection {
+public class ThreadOfList implements CustomCollection {
     public Node first = null;
     private Node last = null;
 
@@ -22,8 +22,6 @@ public class LinkedList implements CustomCollection {
     public boolean add(String str) {
         Node newNode = new Node (str);
         if (isEmpty ()) {
-            newNode.next = null;
-            newNode.prev = null;
             first = newNode;
             last = newNode;
             return true;
@@ -36,18 +34,15 @@ public class LinkedList implements CustomCollection {
     }
 
     public boolean addAll(String[] strArr) {
-        for (String newString : strArr) {
-            add (newString);
+        for (String str : strArr) {
+            add (str);
         }
         return true;
     }
 
     public boolean addAll(Collection strColl) {
         for (Object str : strColl) {
-            Node newNode = new Node ((String) str);
-            if (isEmpty ()) first = newNode;
-            else last.next = newNode;
-            last = newNode;
+            add ((String) str);
         }
         return true;
     }
