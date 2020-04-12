@@ -10,10 +10,4 @@ public class Node {
         this.prev = prev;
         this.id = id;
     }
-
-
-    public void displayNode() // Вывод содержимого элемента
-    {
-        System.out.println(" Строка: " + data);
-    }
 }

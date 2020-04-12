@@ -7,9 +7,9 @@ public interface CustomCollection {
 
     boolean addAll(Collection strColl);
 
-    boolean delete (int index);
+    boolean delete(int index);
 
-    boolean delete (String str);
+    boolean delete(String str);
 
     String get(int index);
 
