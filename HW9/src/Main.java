@@ -4,9 +4,25 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         LinkedList list = new LinkedList ();
-        List strCll = new ArrayList ();
-        String[] strArr = {"1", "2", "Ivan", "3"};
 
+        list.add ("Женя");
+        list.add ("Коля");
+        list.add ("Ира");
+        list.add ("Ольга");
+        list.add ("Никита");
+        System.out.println ("Текущий список : ");
+        list.showMe ();
+        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("______________________________________________________");
+
+        String[] strArr = {"Дмитрий", "Алексей", "Иван", "Инна"};
+        list.addAll (strArr);
+        System.out.println ("Текущий список : ");
+        list.showMe ();
+        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("______________________________________________________");
+
+        List strCll = new ArrayList ();
         strCll.add ("Вася");
         strCll.add ("Петя");
         strCll.add ("Юра");
@@ -15,28 +31,29 @@ public class Main {
         strCll.add ("Денис");
         strCll.add ("Даша");
         strCll.add ("Костя");
-        list.add ("petya");
-        list.add ("2");
-        list.add ("Vasya");
-        list.add ("4");
-        list.add ("5");
         list.addAll (strCll);
-        list.addAll (strArr);
-
-        list.delete ("2");
-        list.delete (2);
-
-        System.out.println ("Мой связанный список: ");
+        System.out.println ("Текущий список : ");
         list.showMe ();
-        System.out.println ("_____________");
+        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("______________________________________________________");
+
+        list.delete (4);
+        list.delete ("Женя");
+        System.out.println ("Текущий список : ");
+        list.showMe ();
+        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("______________________________________________________");
+
         System.out.println ("Элемент по искомому индексу: " + list.get (2) + " !");
-        System.out.println ("_____________________________");
-        System.out.println (list.size ());
-        System.out.println ("________");
-        System.out.println (list.contains ("Lida"));
-        System.out.println ("________");
-        System.out.println ((list.compare (strCll)));
-        System.out.println (list.trim ());
+        System.out.println ("______________________________________________________");
+        System.out.println ("Список сожержит элемент? - "+list.contains ("Вася"));
+        System.out.println ("______________________________________________________");
+        System.out.println ("Список эквивалентен заданной колекции? - "+(list.compare (strCll)));
+        System.out.println ("______________________________________________________");
+        System.out.println ("Трим - "+list.trim ());
+
         list.clear ();
+        System.out.println ("Текущий список : ");
+        list.showMe ();
     }
 }

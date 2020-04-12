@@ -116,12 +116,10 @@ public class LinkedList implements CustomCollection {
             while (!cur.data.equals (str)) {
                 cur = cur.next;
                 if (cur.next == null) {
-                    System.out.println ("not found");
                     return false;
                 }
             }
         }
-        System.out.println ("found!");
         return true;
     }
 
@@ -136,16 +134,16 @@ public class LinkedList implements CustomCollection {
 
     public void showMe() {
         if (isEmpty ()) {
-            System.out.println ("пуст!");
+            System.out.print ("Пуст!");
         } else {
-            Node that = first;
-            System.out.println ("Первый элемент: " + first.data);
-            while (that != null) {
-                System.out.println (that.data);
-                that = that.next;
+            Node cur = first;
+            while (cur != null) {
+                System.out.print (cur.data + "; ");
+
+                cur = cur.next;
             }
-            System.out.println ("Last элемент: " + last.data);
         }
+        System.out.println ();
     }
 
 
