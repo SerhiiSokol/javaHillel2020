@@ -4,6 +4,7 @@ import java.util.Iterator;
 public class ThreadOfList implements CustomCollection {
     public Node first = null;
     private Node last = null;
+    int size = 0;
 
     public boolean isEmpty() {
         return (first == null);
@@ -24,11 +25,13 @@ public class ThreadOfList implements CustomCollection {
         if (isEmpty ()) {
             first = newNode;
             last = newNode;
+            size++;
             return true;
         } else {
             last.next = newNode;
             newNode.prev = last;
             last = newNode;
+            size++;
             return true;
         }
     }
@@ -67,11 +70,13 @@ public class ThreadOfList implements CustomCollection {
                 prev = cur;
                 cur = cur.next;
             }
-            if (cur == first)
-                first = first.next;
+            if (cur == first){
+                first = first.next;}
             else
                 prev.next = cur.next;
+
         }
+        size--;
         return true;
     }
 
@@ -124,6 +129,7 @@ public class ThreadOfList implements CustomCollection {
 
     public boolean clear() {
         first = null;
+        size =0;
         return true;
     }
 

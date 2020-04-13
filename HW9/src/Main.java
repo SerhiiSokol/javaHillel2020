@@ -12,14 +12,14 @@ public class Main {
         list.add ("Никита");
         System.out.println ("Текущий список : ");
         list.showMe ();
-        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("Список состоит из: "+list.size+" елемента(ов).");
         System.out.println ("______________________________________________________");
 
         String[] strArr = {"Дмитрий", "Алексей", "Иван", "Инна"};
         list.addAll (strArr);
         System.out.println ("Текущий список : ");
         list.showMe ();
-        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("Список состоит из: "+list.size+" елемента(ов).");
         System.out.println ("______________________________________________________");
 
         ArrayList strCll = new ArrayList ();
@@ -34,14 +34,15 @@ public class Main {
         list.addAll (strCll);
         System.out.println ("Текущий список : ");
         list.showMe ();
-        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("Список состоит из: "+list.size+" елемента(ов).");
         System.out.println ("______________________________________________________");
 
         list.delete (4);
         list.delete ("Женя");
         System.out.println ("Текущий список : ");
         list.showMe ();
-        System.out.println ("Список состоит из: "+list.size ()+" елемента(ов).");
+        System.out.println ("Список состоит из: "+list.size+" елемента(ов).");
+
         System.out.println ("______________________________________________________");
 
         System.out.println ("Элемент по искомому индексу: " + list.get (2) + " !");
@@ -55,5 +56,6 @@ public class Main {
         list.clear ();
         System.out.println ("Текущий список : ");
         list.showMe ();
+        System.out.println ("Список состоит из: "+list.size+" елемента(ов).");
     }
 }
