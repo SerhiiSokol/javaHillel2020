@@ -11,13 +11,7 @@ public class ThreadOfList implements CustomCollection {
     }
 
     public int size() {
-        Node current = first;
-        int count = 0;
-        while (current != null) {
-            current = current.next;
-            count++;
-        }
-        return count;
+        return size;
     }
 
     public boolean add(String str) {
