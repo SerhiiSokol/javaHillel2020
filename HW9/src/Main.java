@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +21,8 @@ public class Main {
         System.out.println ("Список состоит из: "+list.size()+" елемента(ов).");
         System.out.println ("______________________________________________________");
 
-        ArrayList strCll = new ArrayList ();
+        ArrayList<String> strCll;
+        strCll = new ArrayList<String>();
         strCll.add ("Вася");
         strCll.add ("Петя");
         strCll.add ("Юра");

@@ -1,20 +1,20 @@
 import java.util.Arrays;
 
-public class NumToGraf {
+public class NumbToGraf {
     public static void main(String[] args) {
-        int[] a = {1, 2, 7000, 5, 3, 4, 44, 67};
-        numToGraf(a);
-    }
-
-    public static void numToGraf(int[] a) {
+        int[] a = {1, 4, 0, 4, 2, 0, 20, 42};
         String str = Arrays.toString(a);
         char[] ch = str.toCharArray();
-        String s1, s2, s3, s4, s5;
-        s1 = "";
-        s2 = "";
-        s3 = "";
-        s4 = "";
-        s5 = "";
+        numToGraf(ch);
+    }
+
+    public static void numToGraf(char[] ch) {
+
+        StringBuilder s1 = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
+        StringBuilder s3 = new StringBuilder();
+        StringBuilder s4 = new StringBuilder();
+        StringBuilder s5 = new StringBuilder();
 
         String a1, a2, a3, a4, a5;
         a1 = " @@@@  ";
@@ -77,81 +77,79 @@ public class NumToGraf {
         j4 = "    @@ ";
         j5 = " @@@@  ";
 
-
         for (Character i : ch) {
             if (Character.isDigit(i)) {
                 switch (i) {
-
                     case ('0'):
-                        s1 += a1;
-                        s2 += a2;
-                        s3 += a3;
-                        s4 += a4;
-                        s5 += a5;
+                        s1.append(a1);
+                        s2.append(a2);
+                        s3.append(a3);
+                        s4.append(a4);
+                        s5.append(a5);
 
                         break;
                     case ('1'):
-                        s1 += b1;
-                        s2 += b2;
-                        s3 += b3;
-                        s4 += b4;
-                        s5 += b5;
+                        s1.append(b1);
+                        s2.append(b2);
+                        s3.append(b3);
+                        s4.append(b4);
+                        s5.append(b5);
                         break;
                     case ('2'):
-                        s1 += c1;
-                        s2 += c2;
-                        s3 += c3;
-                        s4 += c4;
-                        s5 += c5;
+                        s1.append(c1);
+                        s2.append(c2);
+                        s3.append(c3);
+                        s4.append(c4);
+                        s5.append(c5);
                         break;
                     case ('3'):
-                        s1 += d1;
-                        s2 += d2;
-                        s3 += d3;
-                        s4 += d4;
-                        s5 += d5;
+                        s1.append(d1);
+                        s2.append(d2);
+                        s3.append(d3);
+                        s4.append(d4);
+                        s5.append(d5);
                         break;
                     case ('4'):
-                        s1 += e1;
-                        s2 += e2;
-                        s3 += e3;
-                        s4 += e4;
-                        s5 += e5;
+                        s1.append(e1);
+                        s2.append(e2);
+                        s3.append(e3);
+                        s4.append(e4);
+                        s5.append(e5);
                         break;
                     case ('5'):
-                        s1 += f1;
-                        s2 += f2;
-                        s3 += f3;
-                        s4 += f4;
-                        s5 += f5;
+                        s1.append(f1);
+                        s2.append(f2);
+                        s3.append(f3);
+                        s4.append(f4);
+                        s5.append(f5);
                         break;
                     case ('6'):
-                        s1 += g1;
-                        s2 += g2;
-                        s3 += g3;
-                        s4 += g4;
-                        s5 += g5;
+                        s1.append(g1);
+                        s2.append(g2);
+                        s3.append(g3);
+                        s4.append(g4);
+                        s5.append(g5);
                         break;
                     case ('7'):
-                        s1 += h1;
-                        s2 += h2;
-                        s3 += h3;
-                        s4 += h4;
-                        s5 += h5;
+                        s1.append(h1);
+                        s2.append(h2);
+                        s3.append(h3);
+                        s4.append(h4);
+                        s5.append(h5);
                         break;
                     case ('8'):
-                        s1 += i1;
-                        s2 += i2;
-                        s3 += i3;
-                        s4 += i4;
-                        s5 += i5;
+                        s1.append(i1);
+                        s2.append(i2);
+                        s3.append(i3);
+                        s4.append(i4);
+                        s5.append(i5);
                         break;
                     case ('9'):
-                        s1 += j1;
-                        s2 += j2;
-                        s3 += j3;
-                        s4 += j4;
-                        s5 += j5;
+                        s1.append(j1);
+                        s2.append(j2);
+                        s3.append(j3);
+                        s4.append(j4);
+                        s5.append(j5);
                         break;
                 }
             }

@@ -1,6 +1,4 @@
 import java.util.Collection;
-import java.util.Iterator;
-
 public class ThreadOfList implements CustomCollection {
     public Node first = null;
     private Node last = null;
@@ -15,58 +13,55 @@ public class ThreadOfList implements CustomCollection {
     }
 
     public boolean add(String str) {
-        Node newNode = new Node (str);
-        if (isEmpty ()) {
+        Node newNode = new Node(str);
+        if (isEmpty()) {
             first = newNode;
-            last = newNode;
-            size++;
-            return true;
         } else {
             last.next = newNode;
             newNode.prev = last;
-            last = newNode;
-            size++;
-            return true;
         }
+        last = newNode;
+        size++;
+        return true;
     }
 
     public boolean addAll(String[] strArr) {
         for (String str : strArr) {
-            add (str);
+            add(str);
         }
         return true;
     }
 
     public boolean addAll(Collection strColl) {
         for (Object str : strColl) {
-            add ((String) str);
+            add((String) str);
         }
         return true;
     }
 
     public boolean delete(int index) {
-        if (isEmpty ()) {
-            System.out.println ("Список пуст!");
+        if (isEmpty()) {
+            System.out.println("Список пуст!");
             return false;
         }
-        delete (get (index));
+        delete(get(index));
         return true;
     }
 
     public boolean delete(String str) {
-        if (isEmpty ()) {
-            System.out.println ("Список пуст!");
+        if (isEmpty()) {
+            System.out.println("Список пуст!");
             return false;
         } else {
             Node cur = first;
             Node prev = first;
-            while (!cur.data.equals (str)) {
+            while (!cur.data.equals(str)) {
                 prev = cur;
                 cur = cur.next;
             }
-            if (cur == first){
-                first = first.next;}
-            else
+            if (cur == first) {
+                first = first.next;
+            } else
                 prev.next = cur.next;
 
         }
@@ -75,7 +70,7 @@ public class ThreadOfList implements CustomCollection {
     }
 
     public String get(int index) {
-        if (isEmpty ()) {
+        if (isEmpty()) {
             return "Список пуст!";
         }
         int runner = 0;
@@ -89,11 +84,10 @@ public class ThreadOfList implements CustomCollection {
 
     public boolean compare(Collection coll) {
         Node current = first;
-        if (coll.size () != size ()) return false;
+        if (coll.size() != size()) return false;
         else {
-            for (Iterator iterator = coll.iterator (); iterator.hasNext (); ) {
-                Object lines = iterator.next ();
-                if (!current.data.equals (lines)) return false;
+            for (Object lines : coll) {
+                if (!current.data.equals(lines)) return false;
                 current = current.next;
             }
             return true;
@@ -103,11 +97,11 @@ public class ThreadOfList implements CustomCollection {
 
     public boolean contains(String str) {
         Node cur = first;
-        if (isEmpty ()) {
-            System.out.println ("Список пуст!");
+        if (isEmpty()) {
+            System.out.println("Список пуст!");
             return false;
         } else {
-            while (!cur.data.equals (str)) {
+            while (!cur.data.equals(str)) {
                 cur = cur.next;
                 if (cur.next == null) {
                     return false;
@@ -123,22 +117,22 @@ public class ThreadOfList implements CustomCollection {
 
     public boolean clear() {
         first = null;
-        size =0;
+        size = 0;
         return true;
     }
 
     public void showMe() {
-        if (isEmpty ()) {
-            System.out.print ("Пуст!");
+        if (isEmpty()) {
+            System.out.print("Пуст!");
         } else {
             Node cur = first;
             while (cur != null) {
-                System.out.print (cur.data + "; ");
+                System.out.print(cur.data + "; ");
 
                 cur = cur.next;
             }
         }
-        System.out.println ();
+        System.out.println();
     }
 
 
