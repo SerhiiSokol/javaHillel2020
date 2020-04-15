@@ -1,54 +1,59 @@
+import javax.swing.*;
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class QuadratilEquation {
-    static float a, b, c;
-    static float d;
-    static double x1, x2;
-
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Решение квадратного уравнения");
-        while (true) {
-            try {
-                System.out.println("Введите 'a' чтобы продолжать или любой другой символ для выхода");
-                String str = s.next();
-                if (!str.equals("a")) {
-                    s.close();
-                    System.exit(0);
-                }
-                System.out.print("Введите значение a -> ");
-                a = s.nextFloat();
-                System.out.print("Введите значение b -> ");
-                b = s.nextFloat();
-                System.out.print("Введите значение c -> ");
-                c = s.nextFloat();
-                System.out.println("a = " + a + " b = " + b + " c = " + c);
+        double a, b, c, D;
+        double x1, x2;
+        JFrame frame = new JFrame();
+        try {
+            String hello = "Решим квадратное уравнение!";
+            JOptionPane.showMessageDialog(frame, hello);
 
-                d = (b * b) - (4 * a * c);
+            boolean check = false;
+            while (!check) {
+                try {
+                    String startStr = JOptionPane.showInputDialog("Для старта программы введите 'S'");
+                    check = startStr.equals("s");
 
-                System.out.println("Дискриминант = " + d);
-
-                if(d < 0)
-                    System.out.print("Уравнение не имеет решений!!!");
-                else
-                if(d == 0) {
-                    x1 = (-b) / (2 * a);
-                    System.out.println ("x = " + x1);
+                } catch (NullPointerException e) {
+                    String err = "Некоректный ввод, повторите сначала";
+                    JOptionPane.showMessageDialog(frame, err);
+                    System.exit(404);
                 }
-                else {
-                    x1 = (-b + Math.sqrt(d)) / (2 * a);
-                    x2 = (-b - Math.sqrt(d)) / (2 * a);
-                    if (x1 == x2) {
-                        System.out.println ("x1 = x2 " + x1);
-                    } else {
-                        System.out.println ("x1 =  " + x1 + "  x2 = " + x2);
-                    }
-                }
-            } catch(InputMismatchException e){
-                System.out.println("!!!Ошибка ввaaода!!!");
             }
-        }
-    }
-}
+            String A = JOptionPane.showInputDialog("Ввведите a");
+            a = Float.parseFloat(A);
+            String B = JOptionPane.showInputDialog("Ввведите b");
+            b = Float.parseFloat(B);
+            String C = JOptionPane.showInputDialog("Ввведите c");
+            c = Float.parseFloat(C);
 
+            D = (b * b) - 4 * a * c;
+
+            String disr = "Дискриминант = " + String.format("%.1f", D);
+            JOptionPane.showMessageDialog(frame, disr);
+
+            if (D < 0) {
+                String notFound = "D < 0 - уравнение не имеет корней";
+                JOptionPane.showMessageDialog(frame, notFound);
+            }
+            if (D == 0) {
+                x1 = (-b) / (2 * a);
+                String X1 = "x1 = " + String.format("%.1f", x1);
+                JOptionPane.showMessageDialog(frame, X1);
+            }
+            if (D > 0) {
+                x1 = (-b + Math.sqrt(D)) / (2 * a);
+                x2 = (-b - Math.sqrt(D)) / (2 * a);
+                String X2 = "x1 = " + String.format("%.1f", x1) + "  x2 = " + String.format("%.1f", x2);
+                JOptionPane.showMessageDialog(frame, X2);
+            }
+        } catch (InputMismatchException e) {
+            String err = "Некоректный ввод, повторите сначала";
+            JOptionPane.showMessageDialog(frame, err);
+        }
+        System.exit(1);
+    }
+
+}
