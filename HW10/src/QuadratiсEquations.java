@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.util.InputMismatchException;
 
-public class QuadratilEquation {
+public class QuadratiсEquations {
     public static void main(String[] args) {
         double a, b, c, D;
         double x1, x2;

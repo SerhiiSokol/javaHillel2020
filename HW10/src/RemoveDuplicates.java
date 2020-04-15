@@ -15,9 +15,9 @@ public class RemoveDuplicates {
         System.out.println ("Новое значение под индексом 5: "+list.get (5));
     }
 
-    public static <Integer> void removeDuplicates(ArrayList<Integer> list) {
+    public static <T> void removeDuplicates(ArrayList<T> list) {
 
-        Set<Integer> set = new LinkedHashSet<>(list);
+        Set<T> set = new LinkedHashSet<>(list);
 
         list.clear ();
 
