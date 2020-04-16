@@ -1,4 +1,5 @@
 import java.util.Collection;
+
 public class ThreadOfList implements CustomCollection {
     public Node first = null;
     private Node last = null;
