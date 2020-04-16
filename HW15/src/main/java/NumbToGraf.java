@@ -80,77 +80,76 @@ public class NumbToGraf {
         for (Character i : ch) {
             if (Character.isDigit(i)) {
                 switch (i) {
-                    case ('0'):
+                    case ('0') -> {
                         s1.append(a1);
                         s2.append(a2);
                         s3.append(a3);
                         s4.append(a4);
                         s5.append(a5);
-
-                        break;
-                    case ('1'):
+                    }
+                    case ('1') -> {
                         s1.append(b1);
                         s2.append(b2);
                         s3.append(b3);
                         s4.append(b4);
                         s5.append(b5);
-                        break;
-                    case ('2'):
+                    }
+                    case ('2') -> {
                         s1.append(c1);
                         s2.append(c2);
                         s3.append(c3);
                         s4.append(c4);
                         s5.append(c5);
-                        break;
-                    case ('3'):
+                    }
+                    case ('3') -> {
                         s1.append(d1);
                         s2.append(d2);
                         s3.append(d3);
                         s4.append(d4);
                         s5.append(d5);
-                        break;
-                    case ('4'):
+                    }
+                    case ('4') -> {
                         s1.append(e1);
                         s2.append(e2);
                         s3.append(e3);
                         s4.append(e4);
                         s5.append(e5);
-                        break;
-                    case ('5'):
+                    }
+                    case ('5') -> {
                         s1.append(f1);
                         s2.append(f2);
                         s3.append(f3);
                         s4.append(f4);
                         s5.append(f5);
-                        break;
-                    case ('6'):
+                    }
+                    case ('6') -> {
                         s1.append(g1);
                         s2.append(g2);
                         s3.append(g3);
                         s4.append(g4);
                         s5.append(g5);
-                        break;
-                    case ('7'):
+                    }
+                    case ('7') -> {
                         s1.append(h1);
                         s2.append(h2);
                         s3.append(h3);
                         s4.append(h4);
                         s5.append(h5);
-                        break;
-                    case ('8'):
+                    }
+                    case ('8') -> {
                         s1.append(i1);
                         s2.append(i2);
                         s3.append(i3);
                         s4.append(i4);
                         s5.append(i5);
-                        break;
-                    case ('9'):
+                    }
+                    case ('9') -> {
                         s1.append(j1);
                         s2.append(j2);
                         s3.append(j3);
                         s4.append(j4);
                         s5.append(j5);
-                        break;
+                    }
                 }
             }
 
