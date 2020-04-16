@@ -7,7 +7,7 @@ public class Integer {
             arr.add(i, (int) (Math.random() * 15));
             System.out.println(arr);
 
-         Integer avg = arr.stream().average().getAsDouble()
+         arr.stream().average().getAsDouble();
         }
     }
 }

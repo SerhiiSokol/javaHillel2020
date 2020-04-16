@@ -1,5 +1,6 @@
+
 public class Collection{
-    private String[] myArray = new String[10];
+    public String[] myArray = new String[10];
 
     public void setSize(int size) {
         this.size = size;

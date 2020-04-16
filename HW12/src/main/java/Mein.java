@@ -11,6 +11,7 @@ public class Mein {
         friends.add ("Костя");
 
         friends.delete (friends.find ("Вася"));
+        friends.delete("Юра");
         System.out.println ("Все элементы массива: ");
         for (int i = 0; i < friends.getSize (); i++) {
             System.out.println (friends.get (i));
