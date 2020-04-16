@@ -38,10 +38,3 @@ public class CollectionTest {
         assertEquals("Аня", myColl.get(0));
     }
 
-    @Test
-    public void testAddALL(){
-        String [] a = {"Петя","Юра","Саша","Олег","Денис","Даша","Костя","Петя","Юра","Саша","Олег","Денис","Даша","Костя"};
-       for(int i = 0;i<a.length;i++){
-           myColl.add(a[i]);
-       }assertEquals(myColl.size,a.length);
-    }}
