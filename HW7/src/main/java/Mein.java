@@ -1,5 +1,3 @@
-package main.java;
-
 public class Mein {
     public static void main(String[] args) {
         Collection friends = new Collection ();

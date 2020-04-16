@@ -1,30 +1,23 @@
 
 public class Collection{
     public String[] myArray = new String[10];
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     private int size = 0;
-
+    public int getSize() {
+        return size;
+    }
     public void add(String s) {
         myArray[size] = s;
         size++;
         if (size == myArray.length) {
             String[] newArray = new String[myArray.length * 2];
-            for (int i = 0; i < myArray.length; i++) {
-                newArray[i] = myArray[i];
-            }
+            System.arraycopy(myArray, 0, newArray, 0, myArray.length);
             myArray = newArray;
         }
     }
 
     public void delete(int index) {
         if (index >= 0 && index < getSize ()) {
-            for (int i = index; i < getSize () - 1; i++) {
-                myArray[i] = myArray[i + 1];
-            }
+            if (getSize() - 1 - index >= 0) System.arraycopy(myArray, index + 1, myArray, index, getSize() - 1 - index);
             size--;
         }
     }
@@ -40,10 +33,6 @@ public class Collection{
         if (index != -1) {
             delete (index);
         }
-    }
-
-    public int getSize() {
-        return size;
     }
 
     public String get(int index) {
@@ -92,8 +81,9 @@ public class Collection{
             flag = false;
         } else {
             for (int i = 0; i < size; i++) {
-                if (myArray[i] != array2[i]) {
+                if (!myArray[i].equals(array2[i])) {
                     flag = false;
+                    break;
                 }
             }
         }
