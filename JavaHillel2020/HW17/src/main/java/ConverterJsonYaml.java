@@ -15,19 +15,19 @@ public class ConverterJsonYaml {
 
     public static void toJson() throws IOException {
         //создаем обьект и присваиваем ему значение мапы файла yaml
-        Object json = new YAMLMapper().readValue(new FileReader("HW17\\src\\main\\resources\\myPerson.yaml"), Object.class);
+        Object json = new YAMLMapper().readValue(new FileReader("C:\\Users\\sokol\\IdeaProjects\\Hillel2020\\JavaHillel2020\\HW17\\src\\main\\resources\\myPerson.yaml"), Object.class);
         //создаем обьект и присваиваем ему значение мапы файла yaml
-        new JsonMapper().writerWithDefaultPrettyPrinter().writeValue(new File("HW17\\src\\main\\resources\\myPerson.json"), json);
+        new JsonMapper().writerWithDefaultPrettyPrinter().writeValue(new File("C:\\Users\\sokol\\IdeaProjects\\Hillel2020\\JavaHillel2020\\HW17\\src\\main\\resources\\myPerson.json"), json);
     }
 
     public static void toYaml() throws IOException {
         //создаем json node и присваиваем ей значение мапы файла yaml
-        JsonNode jsNode = new JsonMapper().readTree(new FileReader("HW17\\src\\main\\resources\\myPerson.json"));
+        JsonNode jsNode = new JsonMapper().readTree(new FileReader("C:\\Users\\sokol\\IdeaProjects\\Hillel2020\\JavaHillel2020\\HW17\\src\\main\\resources\\myPerson.json"));
         //текстовой переменной присваиваем значение мапы json node
         String yaml = new YAMLMapper().writeValueAsString(jsNode);
         //Записываем в файл полученое значение текстовой переменной
-        FileWriter writer = new FileWriter("HW17\\src\\main\\resources\\myPerson2.yaml");
-        writer.write(yaml);
+        FileWriter writer = new FileWriter("C:\\Users\\sokol\\IdeaProjects\\Hillel2020\\JavaHillel2020\\HW17\\src\\main\\resources\\myPerson2.yaml");
+        writer.write((yaml).replaceAll("\"",""));
         writer.flush();
     }
 }
