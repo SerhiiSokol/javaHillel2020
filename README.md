@@ -1,1 +1,1 @@
-# JavaHillel2020
+# Serhii Sokolov Sokolovsv91@gmail.com
