@@ -12,4 +12,4 @@ public class NumToGrafExample {
         }
     }
 }
-//Интересное решение задания, для примера взято со stackoverflow.
+//Интересный способ вывода цифр, для примера взято со stackoverflow.
