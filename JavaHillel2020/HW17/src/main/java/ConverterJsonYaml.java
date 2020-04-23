@@ -15,7 +15,7 @@ public class ConverterJsonYaml {
 
     public static void toJson() throws IOException {
         //создаем обьект и присваиваем ему значение мапы файла yaml
-        Object json = new YAMLMapper().readValue(new FileReader("C:\\Users\\sokol\\IdeaProjects\\Hillel2020\\JavaHillel2020\\HW17\\src\\main\\resources\\myPerson.yaml"), Object.class);
+        Object json = new YAMLMapper().readValue(new FileReader("C:\\Users\\sokol\\IdeaProjects\\JavaHillel2020\\JavaHillel2020\\HW17\\src\\main\\resources\\myPerson.yaml"), Object.class);
         //создаем обьект и присваиваем ему значение мапы файла yaml
         new JsonMapper().writerWithDefaultPrettyPrinter().writeValue(new File("C:\\Users\\sokol\\IdeaProjects\\Hillel2020\\JavaHillel2020\\HW17\\src\\main\\resources\\myPerson.json"), json);
     }
