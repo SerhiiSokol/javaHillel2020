@@ -9,8 +9,8 @@ public class IntegerAverage {
             arr.add(i, (int) (Math.random() * 15)); }
         System.out.println(arr);
         OptionalDouble aver = arr.stream().mapToInt(s->s).average();
-        double a = arr.stream().collect(Collectors.averagingInt(Integer::shortValue));
+        double av = arr.stream().collect(Collectors.averagingInt(Integer::shortValue));
         System.out.println(aver);
-        System.out.println(a);
+        System.out.println(av);
     }
 }
