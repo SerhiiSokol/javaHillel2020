@@ -17,11 +17,13 @@ public class InterSearch {
                 return mid;
         }
 
-        if (arr[low] == key)
-            return low;
-        if (arr[high] == key)
-            return high;
-
+        if (arr[low] == key){
+            System.out.println(low);
+            return low;}
+        if (arr[high] == key){
+            System.out.println(high);
+            return high;}
+        System.out.println(-1);
         return -1;
     }
 }
