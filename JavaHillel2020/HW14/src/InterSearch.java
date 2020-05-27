@@ -1,5 +1,5 @@
 public class InterSearch {
-    public int search(int[] arr, int key) {
+    static int search(int[] arr, int key) {
         int mid;
         int low = 0;
         int high = arr.length - 1;
