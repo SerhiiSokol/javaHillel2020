@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 class Game extends Settings {
@@ -6,7 +7,7 @@ class Game extends Settings {
     private int player2Win = 0;
     private int aiWin = 0;
 
-    public void start() {
+    public void start() throws IOException {
         Settings sett = new Settings();
         sett.strSettings();
         System.out.println("Начинаем игру!");
