@@ -5,7 +5,7 @@ public class Settings {
     static int gamecaunt;
     static boolean isHuman;
 
-    public void strSettings() {
+    public void strSettings() throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Результаты ваших игр сохраняются в файл:\"C://Games.txt\"");
         System.out.println("Очистить перед началом файл сохранений? 1 - ДА, любая другая цифра - НЕТ.");
@@ -33,53 +33,26 @@ public class Settings {
             Game g = new Game();
             g.start();
         }
-        if (inp2==0){
+        if (inp2 == 0) {
             System.out.println("Всего хорошего!");
             System.exit(666);
         }
     }
 
-    public static void save(String result) {
-        BufferedWriter writer = null;
-        try {
-
-            writer = new BufferedWriter(new FileWriter("C://Games.txt", true));
-            writer.append(result);
-            writer.newLine();
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (writer != null) {
-                    writer.flush();
-                    writer.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
+    public static void save(String result) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C://Games.txt", true));
+        writer.append(result);
+        writer.newLine();
+        writer.flush();
+        writer.close();
     }
 
-    public static void deleteSave() {
-        BufferedWriter writer = null;
-        try {
-            String startString = "";
-            writer = new BufferedWriter(new FileWriter("C://Games.txt"));
-            writer.write(startString);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (writer != null) {
-                    writer.flush();
-                    writer.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    public static void deleteSave() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C://Games.txt"));
+        String blankLine = "";
+        writer.write(blankLine);
+        writer.flush();
+        writer.close();
     }
 }
+
