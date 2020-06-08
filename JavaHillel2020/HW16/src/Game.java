@@ -72,7 +72,7 @@ class Game extends Settings {
             System.out.println();
             save(finalRes(player1Win, aiWin));
         }
-        System.out.println("Желаете повторить игру? 1 - да, другой символ - нет");
+        System.out.println("Желаете повторить игру? 1 - ДА, любая другая цифра - НЕТ.");
         Scanner sc = new Scanner(System.in);
         if (sc.nextInt() == 1) {
             start();

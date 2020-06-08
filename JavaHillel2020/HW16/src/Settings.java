@@ -6,7 +6,7 @@ public class Settings {
     static boolean isHuman;
     Scanner sc = new Scanner(System.in);
 
-    public void saveSettings() throws IOException, InterruptedException {
+    public void saveSettings() throws InterruptedException {
 
         System.out.println();
         System.out.println("Результаты ваших игр будет сохраняться в файл:\"C://Games.txt\"");
@@ -15,21 +15,22 @@ public class Settings {
         System.out.println("Очистить перед началом файл сохранений? 1 - ДА, любая другая цифра - НЕТ.");
         System.out.println();
         String inp1 = sc.nextLine();
-        int in = 0;
+
         try {
-            in = Integer.parseInt(inp1);
+            int inp11 = Integer.parseInt(inp1);
+
+            if (inp11 == 1) {
+                deleteSave();
+            }
+            if (inp11 != 1) {
+                System.out.println("Текущий результат будет дописан к предыдущим");
+                System.out.println();
+            }
         } catch (Exception e) {
             System.out.println("Внимание!");
             System.out.println("Некорректный ввод! Попробуем еще раз: ");
             System.out.println();
             saveSettings();
-        }
-        if (in == 1) {
-            deleteSave();
-        }
-        if (in != 1) {
-            System.out.println("Текущий результат будет дописан к предыдущим");
-            System.out.println();
         }
 
     }
@@ -38,28 +39,29 @@ public class Settings {
     public void humanOrAI() {
         System.out.println("Для выбора игры с человеком введите 1, с компьютером 2");
         String inp2 = sc.nextLine();
-        int in = 0;
+
         try {
-            in = Integer.parseInt(inp2);
+            int inp22 = Integer.parseInt(inp2);
+
+            if (inp22 == 2) {
+                isHuman = false;
+                System.out.println();
+                System.out.println("Играет человек против компьютера");
+            }
+            if (inp22 == 1) {
+                isHuman = true;
+                System.out.println();
+                System.out.println("Играет человек против человека");
+            }
+            if (inp22 != 1 & inp22 != 2) {
+                System.out.println("Внимание!");
+                System.out.println("Некорректный ввод! Попробуем еще раз: ");
+                humanOrAI();
+            }
         } catch (Exception e) {
             System.out.println("Внимание!");
             System.out.println("Некорректный ввод! Попробуем еще раз: ");
             System.out.println();
-            humanOrAI();
-        }
-        if (in == 2) {
-            isHuman = false;
-            System.out.println();
-            System.out.println("Играет человек против компьютера");
-        }
-        if (in == 1) {
-            isHuman = true;
-            System.out.println();
-            System.out.println("Играет человек против человека");
-        }
-        if (in != 1 & in != 2) {
-            System.out.println("Внимание!");
-            System.out.println("Некорректный ввод! Попробуем еще раз: ");
             humanOrAI();
         }
 
