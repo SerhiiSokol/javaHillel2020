@@ -9,7 +9,7 @@ public class Settings {
     public void saveSettings() throws IOException, InterruptedException {
 
         System.out.println();
-        System.out.println("Результаты ваших игр сохраняются в файл:\"C://Games.txt\"");
+        System.out.println("Результаты ваших игр будет сохраняться в файл:\"C://Games.txt\"");
         Thread.sleep(2000);
         System.out.println();
         System.out.println("Очистить перед началом файл сохранений? 1 - ДА, любая другая цифра - НЕТ.");
@@ -26,7 +26,8 @@ public class Settings {
         }
         if (in == 1) {
             deleteSave();
-        }if(in != 1){
+        }
+        if (in != 1) {
             System.out.println("Текущий результат будет дописан к предыдущим");
             System.out.println();
         }
@@ -46,35 +47,36 @@ public class Settings {
             System.out.println();
             humanOrAI();
         }
-            if (in == 2) {
-                isHuman = false;
-                System.out.println();
-                System.out.println("Играет человек против компьютера");
-            }
-            if (in == 1) {
-                isHuman = true;
-                System.out.println();
-                System.out.println("Играет человек против человека");
-            }
-            if(in!=1 &in!=2){
-                System.out.println("Внимание!");
-                System.out.println("Некорректный ввод! Попробуем еще раз: ");
-                humanOrAI();}
+        if (in == 2) {
+            isHuman = false;
+            System.out.println();
+            System.out.println("Играет человек против компьютера");
+        }
+        if (in == 1) {
+            isHuman = true;
+            System.out.println();
+            System.out.println("Играет человек против человека");
+        }
+        if (in != 1 & in != 2) {
+            System.out.println("Внимание!");
+            System.out.println("Некорректный ввод! Попробуем еще раз: ");
+            humanOrAI();
+        }
 
     }
 
     public void gameQuantity() {
         System.out.println();
         System.out.println("Введите количество(число) игр которые вы планируете сыграть: ");
-            int gc = Integer.parseInt(sc.nextLine());
-            try {
-               gamecaunt = gc;
-            } catch (Exception e) {
-                System.out.println("Внимание!");
-                System.out.println("Некорректный ввод! Попробуем еще раз: ");
-                System.out.println();
-                gameQuantity();
-            }
+        int gc = Integer.parseInt(sc.nextLine());
+        try {
+            gamecaunt = gc;
+        } catch (Exception e) {
+            System.out.println("Внимание!");
+            System.out.println("Некорректный ввод! Попробуем еще раз: ");
+            System.out.println();
+            gameQuantity();
+        }
     }
 
     public static void save(String result) throws IOException {

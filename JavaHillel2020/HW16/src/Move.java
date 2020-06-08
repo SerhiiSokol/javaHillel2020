@@ -46,7 +46,8 @@ public enum Move {
                     case 3:
                         return Move.EXIT;
 
-                }} catch (Exception e) {
+                }
+            } catch (Exception e) {
                 System.out.println("НЕКОРРЕКТНЫЙ ВВОД! ПОПРОБУЙТЕ ЕЩЕ РАЗ. ");
                 Move.getMove(isHuman);
             }

@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -84,7 +82,7 @@ class Game extends Settings {
 
     void showRes(int p1, int p2) {
         System.out.println();
-            System.out.println("       Общий счет          ");
+        System.out.println("       Общий счет          ");
         if (!isHuman) {
             System.out.println("[Игрок - " + p1 + " : " + p2 + " - Компьютер]");
         }
