@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -7,9 +9,11 @@ class Game extends Settings {
     private int player2Win = 0;
     private int aiWin = 0;
 
-    public void start() throws IOException {
+    public void start() throws IOException, InterruptedException {
         Settings sett = new Settings();
-        sett.strSettings();
+        sett.saveSettings();
+        sett.humanOrAI();
+        sett.gameQuantity();
         System.out.println("Начинаем игру!");
         while (gamecaunt != 0) {
             if (!isHuman) {
@@ -29,11 +33,12 @@ class Game extends Settings {
                 }
                 System.out.println();
                 switch (res) {
-                    case 0 -> System.out.println("Ничья!");
+                    case 0 -> System.out.println("             Ничья!");
                     case 1 -> System.out.println("Победил человек!");
                     case -1 -> System.out.println("Победила машина!");
                 }
                 System.out.println();
+                showRes(p1, p2);
                 showRes(player1Win, aiWin);
             } else {
                 Move p1 = Move.getMove(true);
@@ -52,10 +57,11 @@ class Game extends Settings {
                     player2Win += 1;
                 }
                 switch (res) {
-                    case 0 -> System.out.println("Ничья!");
+                    case 0 -> System.out.println("             Ничья!");
                     case 1 -> System.out.println("Первый игрок победил!");
                     case -1 -> System.out.println("Второй игрок победил!");
                 }
+                showRes(p1, p2);
                 showRes(player1Win, player2Win);
             }
             gamecaunt--;
@@ -68,7 +74,7 @@ class Game extends Settings {
             System.out.println();
             save(finalRes(player1Win, aiWin));
         }
-        System.out.println("Желаете повторить игру? 1 - да, 2 - нет");
+        System.out.println("Желаете повторить игру? 1 - да, другой символ - нет");
         Scanner sc = new Scanner(System.in);
         if (sc.nextInt() == 1) {
             start();
@@ -77,48 +83,57 @@ class Game extends Settings {
     }
 
     void showRes(int p1, int p2) {
+        System.out.println();
+            System.out.println("       Общий счет          ");
         if (!isHuman) {
-            System.out.println();
-            System.out.println("[Игрок [" + p1 + ":" + p2 + "] Компьютер]");
+            System.out.println("[Игрок - " + p1 + " : " + p2 + " - Компьютер]");
+        }
+        if (isHuman) {
+            System.out.println("[Игрок 1 - " + p1 + " : " + p2 + " - Игрок 2]");
+        }
+    }
+
+    void showRes(Move p1, Move p2) {
+        if (!isHuman) {
+            System.out.println("[Игрок - " + p1 + " : " + p2 + " - Компьютер]");
         }
         if (isHuman) {
             System.out.println();
-            System.out.println("[Игрок 1 [" + p1 + ":" + p2 + "] Игрок 2]");
+            System.out.println("[Игрок 1 - " + p1 + " : " + p2 + " - Игрок 2]");
         }
     }
 
     String finalRes(int p1, int p2) {
         String result = "";
-
         if (!isHuman && p1 > p2) {
             result = "По итогу всех игр победил Игрок!" +
-                    "\n[Игрок [" + p1 + ":" + p2 + "] Компьютер]";
+                    "\n[Игрок [" + p1 + " : " + p2 + "] Компьютер]";
             System.out.println(result);
         }
         if (!isHuman && p1 < p2) {
             result = "По итогу всех игр победил Компьютер!" +
-                    "\n[Игрок [" + p1 + ":" + p2 + "] Компьютер]";
+                    "\n[Игрок [" + p1 + " : " + p2 + "] Компьютер]";
             System.out.println(result);
         }
         if (!isHuman && p1 == p2) {
             result = "По итогу всех игр - НИЧЬЯ!" +
-                    "\n[Игрок [" + p1 + ":" + p2 + "] Компьютер]";
+                    "\n[Игрок [" + p1 + " : " + p2 + "] Компьютер]";
             System.out.println(result);
         }
 
         if (isHuman && p1 > p2) {
             result = "По итогу всех игр победил Игрок 1 !" +
-                    "\n[Игрок 1 [" + p1 + ":" + p2 + "] Игрок 2]";
+                    "\n[Игрок 1 [" + p1 + " : " + p2 + "] Игрок 2]";
             System.out.println(result);
         }
         if (isHuman && p1 < p2) {
             result = "По итогу всех игр победил Игрок 2 !" +
-                    "\n[Игрок 1 [" + p1 + ":" + p2 + "] Игрок 2]";
+                    "\n[Игрок 1 [" + p1 + " : " + p2 + "] Игрок 2]";
             System.out.println(result);
         }
         if (isHuman && p1 == p2) {
             result = "По итогу всех игр - НИЧЬЯ!" +
-                    "\n[Игрок 1 [" + p1 + ":" + p2 + "] Игрок 2]";
+                    "\n[Игрок 1 [" + p1 + " : " + p2 + "] Игрок 2]";
             System.out.println(result);
         }
         return result;

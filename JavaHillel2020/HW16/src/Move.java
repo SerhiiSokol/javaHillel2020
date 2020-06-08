@@ -27,23 +27,32 @@ public enum Move {
             }
 
         } else {
+
             System.out.println();
             System.out.println("Введите 0 для выбора КАМНЯ, 1 для выбора БУМАГИ, либо 2 для выбора НОЖНИЦ, 3 для ВЫХОДА");
             Scanner sc = new Scanner(System.in);
-            int player = sc.nextInt();
 
-            switch (player) {
-                case 0:
-                    return Move.ROCK;
-                case 1:
-                    return Move.PAPER;
-                case 2:
-                    return Move.SCISSORS;
-                case 3:
-                    return Move.EXIT;
+            try {
+                int player = sc.nextInt();
 
+
+                switch (player) {
+                    case 0:
+                        return Move.ROCK;
+                    case 1:
+                        return Move.PAPER;
+                    case 2:
+                        return Move.SCISSORS;
+                    case 3:
+                        return Move.EXIT;
+
+                }} catch (Exception e) {
+                System.out.println("НЕКОРРЕКТНЫЙ ВВОД! ПОПРОБУЙТЕ ЕЩЕ РАЗ. ");
+                Move.getMove(isHuman);
             }
+
         }
         return Move.EXIT;
     }
 }
+
