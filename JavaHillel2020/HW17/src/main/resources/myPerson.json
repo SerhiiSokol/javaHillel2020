@@ -1,0 +1,13 @@
+{
+  "name" : "Serhii Sokolov",
+  "Title" : "Java",
+  "Position" : "Junior JAVA or Trainee",
+  "employed" : true,
+  "Skills" : [ "Java Core", "Git", "Maven", "SQL" ],
+  "languages" : {
+    "English" : "low",
+    "Deutsch" : "medium"
+  },
+  "education" : "ODEKU OPLBa Hillel",
+  "WorkIsOver" : "time 6:36 am..."
+}
