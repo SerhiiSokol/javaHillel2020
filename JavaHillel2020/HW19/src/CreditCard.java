@@ -10,7 +10,7 @@ public class CreditCard implements Runnable {
     }
 
     public double getLimit() {
-        return -501;
+        return -500;
     }
 
     void operazii(double sum) {
@@ -29,7 +29,7 @@ public class CreditCard implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Начальный баланс на карте "+getBalance()+" грн.");
+        System.out.println("Начальный баланс на карте " + getBalance() + " грн.");
         if (Thread.currentThread().getName().equals("Ivan")) {
 
             for (int i = 0; i < 11; i++) {
