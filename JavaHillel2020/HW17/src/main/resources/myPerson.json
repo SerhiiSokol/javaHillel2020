@@ -1,13 +1,14 @@
 {
   "name" : "Serhii Sokolov",
-  "Title" : "Java",
-  "Position" : "Junior JAVA or Trainee",
+  "Title" : "Sr. Project Lead",
+  "skill" : "JAVA/J2EE",
   "employed" : true,
-  "Skills" : [ "Java Core", "Git", "Maven", "SQL" ],
+  "domains" : [ "Telecom", "Finance", "Banking", "Healthcare" ],
   "languages" : {
-    "English" : "low",
-    "Deutsch" : "medium"
+    "ELK" : "Medium",
+    "JAVA" : "Expertize",
+    "Scripting" : "Comfortable"
   },
-  "education" : "ODEKU OPLBa Hillel",
+  "education" : "MCA B.Sc Diploma",
   "WorkIsOver" : "time 6:36 am..."
 }

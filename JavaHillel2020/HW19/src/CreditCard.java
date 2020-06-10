@@ -29,13 +29,25 @@ public class CreditCard implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Начальный баланс на карте"+getBalance());
+        System.out.println("Начальный баланс на карте "+getBalance()+" грн.");
         if (Thread.currentThread().getName().equals("Ivan")) {
+
             for (int i = 0; i < 11; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 operazii(50);
             }
         } else if (Thread.currentThread().getName().equals("Irina")) {
+
             for (int i = 0; i < 11; i++) {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 operazii(-150);
             }
         } else System.out.println("нет такого пользователя");
