@@ -85,20 +85,28 @@ public class Settings {
         }
     }
 
-    public static void save(String result) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C://Games.txt", true));
-        writer.append(result);
-        writer.newLine();
-        writer.flush();
-        writer.close();
+    public static void save(String result) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C://Games.txt", true));
+            writer.append(result);
+            writer.newLine();
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void deleteSave() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C://Games.txt"));
-        String blankLine = "";
-        writer.write(blankLine);
-        writer.flush();
-        writer.close();
+    public static void deleteSave() {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C://Games.txt"));
+            String blankLine = "";
+            writer.write(blankLine);
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("Результаты прошлых игр стерты.");
         System.out.println();
     }
