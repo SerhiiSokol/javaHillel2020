@@ -2,12 +2,17 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException{
 
         Game game = new Game();
         System.out.println();
         System.out.println("Добро пожаловать в игру \"ROCK, PAPER, SCISSORS\"");
-        Thread.sleep(2000);
+
+        try {
+            Thread.sleep(2000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
         game.start();
 
     }

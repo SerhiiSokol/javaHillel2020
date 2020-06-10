@@ -7,7 +7,7 @@ class Game extends Settings {
     private int player2Win = 0;
     private int aiWin = 0;
 
-    public void start() throws IOException, InterruptedException {
+    public void start() throws IOException{
         Settings sett = new Settings();
         sett.saveSettings();
         sett.humanOrAI();

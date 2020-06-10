@@ -6,11 +6,15 @@ public class Settings {
     static boolean isHuman;
     Scanner sc = new Scanner(System.in);
 
-    public void saveSettings() throws InterruptedException {
+    public void saveSettings() {
 
         System.out.println();
         System.out.println("Результаты ваших игр будет сохраняться в файл:\"C://Games.txt\"");
-        Thread.sleep(2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println();
         System.out.println("Очистить перед началом файл сохранений? 1 - ДА, любая другая цифра - НЕТ.");
         System.out.println();
