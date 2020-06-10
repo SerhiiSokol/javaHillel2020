@@ -15,7 +15,7 @@ public class Fabric implements Runnable{
     synchronized (getAr()) {
         if (getAr().isEmpty()) {
             try {
-                ar.wait();
+                getAr().wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -25,40 +25,42 @@ public class Fabric implements Runnable{
     }
 }
     private double producer() {
-        synchronized (ar) {
-            if (ar.size() == getSize()) {
+        synchronized (getAr()) {
+            if (getAr().size() == getSize()) {
+
                 try {
-                    ar.wait();
+                    getAr().wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             int newValue = (int) (Math.random()*10);
-            ar.add(newValue);
-            ar.notifyAll();
+            getAr().add(newValue);
+            getAr().notifyAll();
             return newValue;
         }
     }
     @Override
     public void run() {
-        if (Thread.currentThread().getName().equals("consumer")) {
 
-            for (int i = 0; i < 11; i++) {
+        if (Thread.currentThread().getName().equals("consumer")) {
+            while (true){
                 try {
                     Thread.sleep(2000);
+                    if (getAr().size()==getSize()){
+                        System.out.println("Буфер заполнен"+ getAr());
+                    }
                     System.out.println("Удаляю первый элемент " +consumer());
-                    System.out.println(ar);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
             }
         } else if (Thread.currentThread().getName().equals("producer")) {
-
-            for (int i = 0; i < 11; i++) {
+            while (true){
                 try {
                     Thread.sleep(1000);
                     System.out.println("Создаю элемент " +producer());
-                    System.out.println(ar);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
