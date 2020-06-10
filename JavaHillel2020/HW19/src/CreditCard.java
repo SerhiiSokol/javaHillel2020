@@ -1,16 +1,5 @@
-
-
-public class CreditCard {
-    private double balance;
-    private final double limit;
-    String name;
-    boolean flag = true;
-
-    public CreditCard(double balance, double limit, String name) {
-        this.balance = balance;
-        this.limit = limit;
-        this.name = name;
-    }
+public class CreditCard implements Runnable {
+    private double balance = 500;
 
     public double getBalance() {
         return balance;
@@ -21,26 +10,34 @@ public class CreditCard {
     }
 
     public double getLimit() {
-        return limit;
+        return -501;
     }
 
     void operazii(double sum) {
+
         if (sum > 0) {
-            System.out.println("Пополнение счета на " + sum);
             setBalance(getBalance() + sum);
+            System.out.println(Thread.currentThread().getName() + " пополненяет счет на " + sum + "грн. Баланс " + getBalance() + " грн.");
         }
-        if (sum < 0) {
-            if ((getBalance() + sum) < getLimit()) {
-                System.out.println("Снятие со счета " + sum);
-                System.out.println("Кредитный лимит исчерпан, в операции отказано");
-                flag = false;
-            }
-            if (sum < 0) {
-                if ((getBalance() + sum) > getLimit()) {
-                    System.out.println("Снятие со счета " + sum);
-                    setBalance(getBalance() + sum);
-                }
-            }
+        if (sum < 0 && (getBalance() + sum) < getLimit()) {
+            System.out.println(Thread.currentThread().getName() + " операция превышает кредитный лимит, доступно " + ((-1) * (getLimit() - getBalance())) + " грн.");
+        } else if (sum < 0 && (getBalance() + sum) > getLimit()) {
+            setBalance(getBalance() + sum);
+            System.out.println(Thread.currentThread().getName() + " снимает со счета " + sum + "грн. Баланс " + getBalance() + " грн.");
         }
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Начальный баланс на карте"+getBalance());
+        if (Thread.currentThread().getName().equals("Ivan")) {
+            for (int i = 0; i < 11; i++) {
+                operazii(50);
+            }
+        } else if (Thread.currentThread().getName().equals("Irina")) {
+            for (int i = 0; i < 11; i++) {
+                operazii(-150);
+            }
+        } else System.out.println("нет такого пользователя");
     }
 }

@@ -1,10 +1,11 @@
 
 public class Main {
     public static void main(String[] args) {
-        Thread userThread1 = new Thread(new User(-150));
-        Thread userThread2 = new Thread(new User(50));
-        userThread1.setName("Inna");
-        userThread2.setName("Oleg");
+        CreditCard cc = new CreditCard();
+        Thread userThread1 = new Thread(cc);
+        Thread userThread2 = new Thread(cc);
+        userThread1.setName("Ivan");
+        userThread2.setName("Irina");
         userThread1.start();
         userThread2.start();
 
