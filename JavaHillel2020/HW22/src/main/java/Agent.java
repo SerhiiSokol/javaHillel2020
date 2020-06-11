@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
 public class Agent {
     private static final String QUEUE_NAME = "MYQueue";
 
-    public static void main(String[] args) throws IOException, TimeoutException, InterruptedException {
+    public static void main(String[] args) throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         Connection connection = factory.newConnection();

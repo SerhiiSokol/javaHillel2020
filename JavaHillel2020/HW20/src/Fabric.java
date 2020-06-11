@@ -32,6 +32,7 @@ public class Fabric implements Runnable {
 
                 try {
                     if (getAr().size() == getSize()) {
+                        System.out.println("_________________________________");
                         System.out.println("The list is full " + getAr());
                     }
                     getAr().wait();
@@ -57,6 +58,7 @@ public class Fabric implements Runnable {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                System.out.println("_________________________________");
                 System.out.println("Delete the first list item " + consumer());
 
 
@@ -69,6 +71,7 @@ public class Fabric implements Runnable {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                System.out.println("_________________________________");
                 System.out.println("Add items to the end of the list. " + producer());
 
             }
