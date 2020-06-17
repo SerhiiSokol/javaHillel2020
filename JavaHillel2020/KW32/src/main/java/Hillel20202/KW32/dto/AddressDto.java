@@ -2,13 +2,16 @@ package Hillel20202.KW32.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
-public class AddresDto {
+@ToString
+public class AddressDto {
     private String postalCode;
     private String country;
     private String city;
-    private String bilding;
+    private String street;
+    private String house;
     private String flat;
 }

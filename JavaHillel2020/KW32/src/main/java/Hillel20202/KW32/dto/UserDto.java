@@ -1,12 +1,21 @@
 package Hillel20202.KW32.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
 public class UserDto {
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
-    private AddresDto addresDto;
+    private AddressDto address;
     private String login;
     private String password;
+
+
 }
