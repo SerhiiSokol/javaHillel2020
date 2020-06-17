@@ -30,7 +30,7 @@ public class Address implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "PostalCode")
+    @Column(name = "pcode")
     private String postalCode;
     private String country;
     private String city;

@@ -1,5 +1,4 @@
 package Hillel20202.KW32.model;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
