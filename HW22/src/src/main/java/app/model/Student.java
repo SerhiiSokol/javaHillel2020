@@ -1,16 +1,6 @@
-package ru.javavision.model;
+package app.model;
 
-import java.io.Serializable;
-
-//
-// ArrayList<Student> student = StudentDB.select();
-//        req.setAttribute("student", student);
-//
-//        getServletContext().getRequestDispatcher(index).forward(req, resp);
-
-
-public class Student implements Serializable {
-
+public class Student{
     private int Cod_Student;
     private String Full_name;
     private int group;
@@ -23,6 +13,10 @@ public class Student implements Serializable {
         Full_name = full_name;
         this.group = group;
         Year_of_receipt = year_of_receipt;
+    }
+
+    public Student(int cod_Student) {
+        Cod_Student = cod_Student;
     }
 
     public Student(int cod_Student, String full_name, int group, String year_of_receipt, boolean isdelleted) {
@@ -75,7 +69,7 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "app.model.Student{" +
                 "Cod_Student=" + Cod_Student +
                 ", Full_name='" + Full_name + '\'' +
                 ", group=" + group +
