@@ -21,7 +21,7 @@ public class MainServlet extends HttpServlet {
     }
 
     private final static String index = "/WEB-INF/view/index.jsp";
-
+    private final static String studentForm = "/WEB-INF/view/StudentForm.jsp";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         doGet(request, response);
@@ -48,7 +48,7 @@ public class MainServlet extends HttpServlet {
 
     @SneakyThrows
     private void studentAdd(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/StudentForm.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher(studentForm);
         dispatcher.forward(request, response);
     }
 

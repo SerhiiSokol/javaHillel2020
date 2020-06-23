@@ -10,15 +10,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Books Store Application</title>
+    <title>Student DB</title>
 </head>
 <body>
 <div style="text-align: center;">
-    <h1>Books Management</h1>
+    <h1>Student DB</h1>
     <h2>
-        <a href="/new">Add New Book</a>
+        <a href="/new">Add Student</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="/list">List All Books</a>
+        <a href="/list">List Student</a>
 
     </h2>
 </div>
@@ -29,11 +29,8 @@
             <table border="1" cellpadding="5">
                 <caption>
                     <h2>
-                        <c:if test="${student != null}">
-                            Edit Book
-                        </c:if>
                         <c:if test="${student == null}">
-                            Add New Book
+                            Add Student
                         </c:if>
                     </h2>
                 </caption>

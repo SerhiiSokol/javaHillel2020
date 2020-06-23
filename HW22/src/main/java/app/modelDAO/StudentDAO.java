@@ -10,7 +10,7 @@ public class StudentDAO {
     private static String URL;
     private static String USER;
     private static String PASS;
-    private Connection Connection;
+    private java.sql.Connection Connection;
 
     public StudentDAO(String Url, String Username, String Password) {
         URL = Url;
@@ -49,7 +49,6 @@ public class StudentDAO {
         }
         rs.close();
         statement.close();
-
         disconnect();
         return students;
     }

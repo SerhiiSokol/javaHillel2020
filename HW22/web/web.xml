@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         id="WebApp_ID" version="3.1">
+
+<context-param>
+    <param-name>Url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/student?useUnicode=true&amp;serverTimezone=UTC&amp;useSSL=false</param-value>
+</context-param>
+
+<context-param>
+    <param-name>Username</param-name>
+    <param-value>root</param-value>
+</context-param>
+
+<context-param>
+    <param-name>Password</param-name>
+    <param-value>S@mposebe1</param-value>
+</context-param>
+
+<servlet>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>app.servlet.MainServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+</servlet-mapping>
+
+</web-app>
