@@ -1,11 +1,8 @@
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+
 @Getter
 @Setter
-@AllArgsConstructor
-@ToString
 public class OneGroup {
     int Cod_student;
     String Full_name;

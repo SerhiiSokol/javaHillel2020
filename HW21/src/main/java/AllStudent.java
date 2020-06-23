@@ -1,12 +1,8 @@
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@ToString
 public class AllStudent {
     private final int id;
     private final String fn;
