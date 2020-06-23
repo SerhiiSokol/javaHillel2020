@@ -1,3 +1,4 @@
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,7 +107,7 @@ public class Main {
                 select students.Cod_student, students.Full_name, `groups`.`group`, grade.Grade,lessons.Name ,teachers.Full_name 
                 from students
                 left join `groups` on `groups`.Cod_Groups = students.`group`
-                left join grade on grade.app.model.Student = students.Cod_student\s
+                left join grade on grade = students.Cod_student\s
                 left join lessons on  grade.Lesson = lessons.Cod_Lessons
                 left join teachers on lessons.Teacher = teachers.Cod_teacher where students.Full_name = ?;""";
 
@@ -141,7 +142,7 @@ public class Main {
                 avg(grade.Grade) as Grade,Year_of_receipt
                 from student.students
                 left join `groups` on `groups`.Cod_Groups = students.`group`
-                left join grade on grade.app.model.Student = students.Cod_student
+                left join grade on grade = students.Cod_student
                 where students.Full_name = ?;""";
 
         PreparedStatement preStatement = null;
