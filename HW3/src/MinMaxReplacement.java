@@ -1,4 +1,4 @@
-public class HW3MinMaxReplacement {
+public class MinMaxReplacement {
     public static void main(String[] args) {
         int[] N = {4, -5, 0, 6, 8};
         int max = N[0];

@@ -1,4 +1,4 @@
-public class HW3FactorialDoWhile {
+public class FactorialDoWhile {
     public static void main(String[] args) {
         double n = 7;
         double i = 1;

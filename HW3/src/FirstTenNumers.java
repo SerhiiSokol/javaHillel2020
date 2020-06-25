@@ -1,4 +1,4 @@
-public class HW3FirstTenNumers {
+public class FirstTenNumers {
     public static void main(String[] args) {
         int[] c = new int[20];
         int value = 0;
